@@ -8,6 +8,7 @@ import uz.ages.fb_cms_b.entity.Tags;
 import uz.ages.fb_cms_b.payload.TagsDto;
 import uz.ages.fb_cms_b.repository.TagsRepository;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -16,6 +17,11 @@ public class TagsController {
 
     @Autowired
     TagsRepository tagsRepository;
+
+    @GetMapping
+    public List<Tags> getAllTags() {
+        return tagsRepository.findAll();
+    }
 
     @GetMapping("/{id}")
     public Tags getOneTag(@PathVariable Integer id) {
