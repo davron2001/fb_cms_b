@@ -10,4 +10,6 @@ public class FbCmsBApplication {
         SpringApplication.run(FbCmsBApplication.class, args);
     }
 
+
+
 }
