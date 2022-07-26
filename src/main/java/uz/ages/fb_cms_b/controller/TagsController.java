@@ -55,7 +55,7 @@ public class TagsController {
         }
     }
 
-    @DeleteMapping
+    @DeleteMapping("/{id}")
     public ResponseEntity<?> deleteTags(@PathVariable Integer id) {
         Optional<Tags> byId = tagsRepository.findById(id);
         if (byId.isPresent()) {
