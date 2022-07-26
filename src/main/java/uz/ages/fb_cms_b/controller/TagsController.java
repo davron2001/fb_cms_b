@@ -54,4 +54,13 @@ public class TagsController {
             return ResponseEntity.status(201).body("Bunday idli tag yuq ekan. Yangi qushildi.");
         }
     }
+
+    @DeleteMapping
+    public ResponseEntity<?> deleteTags(@PathVariable Integer id) {
+        Optional<Tags> byId = tagsRepository.findById(id);
+        if (byId.isPresent()) {
+            tagsRepository.deleteById(id);
+        }
+        return ResponseEntity.status(409).body("Deleted");
+    }
 }
