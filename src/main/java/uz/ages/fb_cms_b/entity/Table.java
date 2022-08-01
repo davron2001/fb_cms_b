@@ -18,6 +18,6 @@ public class Table {
 
     private String title;
 
-    @Column(length = 6000)
+    @Column(length = 10000)
     private String content;
 }
